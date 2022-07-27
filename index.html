@@ -15,6 +15,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        .alert {
+          padding: 20px;
+          border: 2px solid crimson;
+          border-radius: 30px;
+          font-weight: 500;
+          background-color: crimson;
+          color: #f5f5f5;
+          font-family: 'Poppins', sans-serif;
+          opacity: 1;
+          transition: opacity 0.6s;
+          margin-bottom: 15px;
+          transition: 0.8s;
+          margin: 20px 75px;
+          display: inline-block;
+        }
+        
+        
+        .closebtn {
+          margin-left: 15px;
+          color: #f5f5f5;
+          font-weight: bold;
+          float: right;
+          font-size: 22px;
+          margin-top: 3.5px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.8s;
+        }
+        
+        .alert:hover{
+          color: crimson;
+          background-color: #f5f5f5;
+        }
+        
+        .alert:hover .closebtn{
+          color: crimson;
+        }
+
+        .not{
+            color: #f5f5f5;
+            text-decoration: underline;
+            transition: 0.8s;
+        }
+
+        .alert:hover .not{
+            color: crimson;
+        }
+        </style>
+
 </head>
 <body>
     <!-- menu -->
@@ -36,7 +87,24 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
+        <div class="alert">
+            <span class="closebtn">&times;</span>  
+            <strong>Notice:</strong> This website is still in development and may contain bugs and other problems, we are fixing them. <a class="not" href="mailto:jcohenkadosh@gmail.com">Notify us of bugs here.</a>
+        </div>
     </nav>
+
+    <script>
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+        
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function(){ div.style.display = "none"; }, 600);
+          }
+        }
+    </script>
 
     <!-- home section start -->
     <section class="home" id="home">
